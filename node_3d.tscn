@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://gx00f1kg6ji"]
+
+[ext_resource type="Script" path="res://EditorCamera.gd" id="1_pgi5g"]
+[ext_resource type="Texture2D" uid="uid://fckda4f36ujt" path="res://prototypeblue.png" id="2_8kacu"]
+[ext_resource type="Texture2D" uid="uid://bq1j6nbnlvhgd" path="res://prototypeolive.png" id="2_a08bj"]
+
+[sub_resource type="Environment" id="Environment_1vqt7"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_1hw12"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oiyef"]
+albedo_texture = ExtResource("2_a08bj")
+uv1_scale = Vector3(2.055, 2.055, 2.055)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1lf2k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_630am"]
+albedo_texture = ExtResource("2_8kacu")
+uv1_scale = Vector3(16.002, 16.002, 16.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc7ke"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qr5gx"]
+size = Vector3(28.9474, 0.171576, 35.1231)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1vqt7")
+camera_attributes = SubResource("CameraAttributesPhysical_1hw12")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.606058, 0.795421, 0, -0.795421, 0.606058, 0, 5.39799, 0)
+
+[node name="CameraOrigin" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0857878, -9.91909)
+script = ExtResource("1_pgi5g")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0664699, 4.02874)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraOrigin"]
+material_override = SubResource("StandardMaterial3D_oiyef")
+mesh = SubResource("SphereMesh_1lf2k")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
+transform = Transform3D(28.9517, 0, 0, 0, 0.132246, 0, 0, 0, 35.0983, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_630am")
+mesh = SubResource("BoxMesh_qc7ke")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/StaticBody3D"]
+shape = SubResource("BoxShape3D_qr5gx")
