@@ -1,21 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://gx00f1kg6ji"]
+[gd_scene load_steps=11 format=3 uid="uid://dyqqpj0f2b64p"]
 
-[ext_resource type="Script" path="res://EditorCamera.gd" id="1_pgi5g"]
-[ext_resource type="Texture2D" uid="uid://fckda4f36ujt" path="res://prototypeblue.png" id="2_8kacu"]
-[ext_resource type="Texture2D" uid="uid://bq1j6nbnlvhgd" path="res://prototypeolive.png" id="2_a08bj"]
+[ext_resource type="Script" path="res://scripts/EditorCamera.gd" id="1_uvp6v"]
+[ext_resource type="Texture2D" uid="uid://bq1j6nbnlvhgd" path="res://textures/prototypeolive.png" id="2_b7xun"]
+[ext_resource type="Texture2D" uid="uid://fckda4f36ujt" path="res://textures/prototypeblue.png" id="3_nlpx2"]
 
 [sub_resource type="Environment" id="Environment_1vqt7"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_1hw12"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oiyef"]
-albedo_texture = ExtResource("2_a08bj")
+albedo_texture = ExtResource("2_b7xun")
 uv1_scale = Vector3(2.055, 2.055, 2.055)
 
 [sub_resource type="SphereMesh" id="SphereMesh_1lf2k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_630am"]
-albedo_texture = ExtResource("2_8kacu")
+albedo_texture = ExtResource("3_nlpx2")
 uv1_scale = Vector3(16.002, 16.002, 16.002)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qc7ke"]
@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 0.606058, 0.795421, 0, -0.795421, 0.606058, 
 
 [node name="CameraOrigin" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0857878, -9.91909)
-script = ExtResource("1_pgi5g")
+script = ExtResource("1_uvp6v")
 camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="CameraOrigin"]

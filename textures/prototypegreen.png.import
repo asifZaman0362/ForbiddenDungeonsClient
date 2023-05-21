@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g2b0j7cgix80"
-path.s3tc="res://.godot/imported/thing.png-3738f798118d4bde50535ada39977ddd.s3tc.ctex"
+uid="uid://hhrid2fk31ji"
+path="res://.godot/imported/prototypegreen.png-e7a6d7e790c8533d9bf8be8c1ee85aad.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://thing.png"
-dest_files=["res://.godot/imported/thing.png-3738f798118d4bde50535ada39977ddd.s3tc.ctex"]
+source_file="res://textures/prototypegreen.png"
+dest_files=["res://.godot/imported/prototypegreen.png-e7a6d7e790c8533d9bf8be8c1ee85aad.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
