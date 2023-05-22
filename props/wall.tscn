@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b65vi2pn28f1"]
+
+[ext_resource type="Texture2D" uid="uid://dwuniu3w8cbw1" path="res://textures/prototypered.png" id="1_8q2ng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7fta"]
+size = Vector3(0.0937757, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywoxb"]
+albedo_texture = ExtResource("1_8q2ng")
+
+[sub_resource type="BoxMesh" id="BoxMesh_47nha"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.513126, 0)
+
+[node name="Thing" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Thing"]
+shape = SubResource("BoxShape3D_x7fta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Thing/CollisionShape3D"]
+transform = Transform3D(0.0921502, 0, 0, 0, 1.01402, 0, 0, 0, 0.992368, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ywoxb")
+mesh = SubResource("BoxMesh_47nha")
+skeleton = NodePath("../..")

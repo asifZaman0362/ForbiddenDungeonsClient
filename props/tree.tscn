@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5jxqqpo8iw0w"]
+
+[ext_resource type="Texture2D" uid="uid://bq1j6nbnlvhgd" path="res://textures/prototypeolive.png" id="1_xgy57"]
+[ext_resource type="Texture2D" uid="uid://hhrid2fk31ji" path="res://textures/prototypegreen.png" id="2_0wo0e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qignb"]
+height = 3.85419
+radius = 1.27061
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywoxb"]
+albedo_color = Color(1, 0.627451, 0, 1)
+albedo_texture = ExtResource("1_xgy57")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ha84p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7xp1"]
+albedo_texture = ExtResource("2_0wo0e")
+
+[sub_resource type="PrismMesh" id="PrismMesh_pjltu"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87066, 0)
+
+[node name="Thing" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Thing"]
+shape = SubResource("CylinderShape3D_qignb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Thing/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.930155, 0)
+material_override = SubResource("StandardMaterial3D_ywoxb")
+mesh = SubResource("CylinderMesh_ha84p")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Thing/CollisionShape3D"]
+transform = Transform3D(2.52291, 0, 0, 0, 2.52291, 0, 0, 0, 2.52291, 0, 0.532658, 0)
+material_override = SubResource("StandardMaterial3D_f7xp1")
+mesh = SubResource("PrismMesh_pjltu")

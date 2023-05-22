@@ -1,8 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyqqpj0f2b64p"]
+[gd_scene load_steps=18 format=3 uid="uid://bclh8k46a0ctn"]
 
+[ext_resource type="Script" path="res://scripts/Worldmanager.gd" id="1_agm0p"]
 [ext_resource type="Script" path="res://scripts/EditorCamera.gd" id="1_uvp6v"]
+[ext_resource type="PackedScene" uid="uid://c30k4333hc3ko" path="res://props/barrel.tscn" id="2_4eevd"]
 [ext_resource type="Texture2D" uid="uid://bq1j6nbnlvhgd" path="res://textures/prototypeolive.png" id="2_b7xun"]
+[ext_resource type="PackedScene" uid="uid://dwmub580rm0qt" path="res://props/crate.tscn" id="3_c2hrc"]
 [ext_resource type="Texture2D" uid="uid://fckda4f36ujt" path="res://textures/prototypeblue.png" id="3_nlpx2"]
+[ext_resource type="PackedScene" uid="uid://vtrd2qkvlk02" path="res://scenes/mapeditorui.tscn" id="4_rbl8x"]
+[ext_resource type="PackedScene" uid="uid://c5jxqqpo8iw0w" path="res://props/tree.tscn" id="4_rieep"]
+[ext_resource type="PackedScene" uid="uid://b65vi2pn28f1" path="res://props/wall.tscn" id="5_s7r45"]
+[ext_resource type="PackedScene" uid="uid://c2it8jhk6byb3" path="res://props/door.tscn" id="6_wh1l6"]
 
 [sub_resource type="Environment" id="Environment_1vqt7"]
 
@@ -25,9 +32,16 @@ size = Vector3(28.9474, 0.171576, 35.1231)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." node_paths=PackedStringArray("camera")]
 environment = SubResource("Environment_1vqt7")
 camera_attributes = SubResource("CameraAttributesPhysical_1hw12")
+script = ExtResource("1_agm0p")
+barrel = ExtResource("2_4eevd")
+crate = ExtResource("3_c2hrc")
+tree = ExtResource("4_rieep")
+wall = ExtResource("5_s7r45")
+door = ExtResource("6_wh1l6")
+camera = NodePath("../CameraOrigin")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.606058, 0.795421, 0, -0.795421, 0.606058, 0, 5.39799, 0)
@@ -41,6 +55,7 @@ camera = NodePath("Camera3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0664699, 4.02874)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraOrigin"]
+transform = Transform3D(0.297454, 0, 0, 0, 0.297454, 0, 0, 0, 0.297454, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_oiyef")
 mesh = SubResource("SphereMesh_1lf2k")
 
@@ -55,3 +70,6 @@ mesh = SubResource("BoxMesh_qc7ke")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/StaticBody3D"]
 shape = SubResource("BoxShape3D_qr5gx")
+
+[node name="Control" parent="." node_paths=PackedStringArray("manager") instance=ExtResource("4_rbl8x")]
+manager = NodePath("../WorldEnvironment")

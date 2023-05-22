@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq1j6nbnlvhgd"
-path.s3tc="res://.godot/imported/prototypeolive.png-fa0dfbeaa1ad32244c8213b79b1fa2b2.s3tc.ctex"
+path.etc2="res://.godot/imported/prototypeolive.png-fa0dfbeaa1ad32244c8213b79b1fa2b2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/prototypeolive.png"
-dest_files=["res://.godot/imported/prototypeolive.png-fa0dfbeaa1ad32244c8213b79b1fa2b2.s3tc.ctex"]
+dest_files=["res://.godot/imported/prototypeolive.png-fa0dfbeaa1ad32244c8213b79b1fa2b2.etc2.ctex"]
 
 [params]
 

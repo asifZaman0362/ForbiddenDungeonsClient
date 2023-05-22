@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1h4hacahe4ul"]
+
+[ext_resource type="Script" path="res://scripts/AssetIndexing.gd" id="1_l0l21"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dqt2g"]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("camera", "viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.18362)
+script = ExtResource("1_l0l21")
+camera = NodePath("SubViewport/Camera3D")
+viewport = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.693452, -0.3004, 0.654892, 8.6842e-09, 0.908938, 0.416931, -0.720503, -0.289122, 0.630305, 2.46135, 0.981722, 1.7722)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.997
+offset_right = 1.0
+offset_bottom = -0.056025
+
+[node name="Panel" type="Panel" parent="Control"]
+material = SubResource("CanvasItemMaterial_dqt2g")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.006
+offset_right = -4.0
+offset_bottom = 0.123973
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.90041, -0.142347, 0.411095, 1.0775e-16, 0.944955, 0.327201, -0.435043, -0.294615, 0.850847, 0, 0, 0)

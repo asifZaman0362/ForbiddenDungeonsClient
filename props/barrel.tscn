@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c30k4333hc3ko"]
+
+[ext_resource type="Texture2D" uid="uid://dwuniu3w8cbw1" path="res://textures/prototypered.png" id="1_ywl8p"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h374a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywoxb"]
+albedo_texture = ExtResource("1_ywl8p")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wrbni"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963555, 0)
+
+[node name="Thing" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Thing"]
+shape = SubResource("CylinderShape3D_h374a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Thing"]
+material_override = SubResource("StandardMaterial3D_ywoxb")
+mesh = SubResource("CylinderMesh_wrbni")

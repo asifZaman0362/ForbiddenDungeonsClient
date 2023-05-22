@@ -80,6 +80,5 @@ func _process(delta):
 		camera.look_at(position)
 	position = position.move_toward(target_position, target_position.distance_to(position) * delta)
 	var dp = velocity.rotated(Vector3.UP, deg_to_rad(rotation_degrees.y))
-	print_debug(dp)
 	target_position += dp
 	camera.position.z = lerp(camera.position.z, zoom_level, abs(camera.position.z - zoom_level) * delta)

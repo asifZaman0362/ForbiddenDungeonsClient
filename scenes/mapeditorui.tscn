@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=3 uid="uid://vtrd2qkvlk02"]
+
+[ext_resource type="Script" path="res://scripts/mapeditorui.gd" id="1_npp13"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_npp13")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_right = 0.286
+anchor_bottom = 1.0
+offset_left = -6.912
+offset_right = 1.52798
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.022
+anchor_right = 0.039
+anchor_bottom = 0.022
+offset_left = 0.0909997
+offset_top = -0.256001
+offset_right = 72.091
+offset_bottom = 25.744
+text = "Add Prop"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.088
+anchor_right = 0.085
+anchor_bottom = 0.088
+offset_left = -0.135
+offset_top = -0.0240045
+offset_right = 49.865
+offset_bottom = 30.976
+text = "Crate"
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.088
+anchor_right = 0.085
+anchor_bottom = 0.088
+offset_left = -0.135
+offset_top = 40.976
+offset_right = 49.865
+offset_bottom = 71.976
+text = "Wall"
+
+[node name="Button5" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.088
+anchor_right = 0.085
+anchor_bottom = 0.088
+offset_left = 68.865
+offset_top = 40.976
+offset_right = 118.865
+offset_bottom = 71.976
+text = "Door"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.088
+anchor_right = 0.085
+anchor_bottom = 0.088
+offset_left = 67.865
+offset_top = -0.0240045
+offset_right = 117.865
+offset_bottom = 30.976
+text = "Barrel"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.085
+anchor_top = 0.088
+anchor_right = 0.085
+anchor_bottom = 0.088
+offset_left = 141.865
+offset_top = -0.0240045
+offset_right = 191.865
+offset_bottom = 30.976
+text = "Tree"
+
+[connection signal="button_down" from="Panel/Button" to="." method="_spawn_object" binds= ["crate"]]
+[connection signal="button_down" from="Panel/Button4" to="." method="_spawn_object" binds= ["wall"]]
+[connection signal="button_down" from="Panel/Button5" to="." method="_spawn_object" binds= ["door"]]
+[connection signal="button_down" from="Panel/Button2" to="." method="_spawn_object" binds= ["barrel"]]
+[connection signal="button_down" from="Panel/Button3" to="." method="_spawn_object" binds= ["tree"]]
